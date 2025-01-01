@@ -384,6 +384,70 @@ margin-right: 200px;
 .destination_arrow .material-symbols-outlined:hover {
   transform: translateX(10px); /* Déplacement vers la droite au survol */
 }
+/* Styles mis à jour pour les icônes en image */
+.destination_header_group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.rating_number {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #23385C;
+}
+
+/* Groupe d'icônes */
+.icon_group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.building_rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #007bff;
+}
+
+.hotel-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.travel_icons {
+  display: flex;
+  gap: 8px;
+}
+
+.icon_circle {
+  width: 32px;
+  height: 32px;
+  background-color: #E6F0FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-icon {
+  width: 16px;
+  height: 16px;
+}
 
 /*...................................................... Carrousel............................................. */
 /* Style général du carousel */

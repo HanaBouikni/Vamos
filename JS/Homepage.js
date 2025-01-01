@@ -37,8 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const chosenBudget = document.getElementById("chosen-budget");
 
   budgetRange.addEventListener("input", (event) => {
-      const budgetValue = parseInt(event.target.value).toLocaleString("fr-DZ") + " DZD";
-      chosenBudget.textContent = `Budget choisi : ${budgetValue}`;
+    const budgetValue = parseInt(event.target.value).toLocaleString("fr-DZ") + " DZD";
+    
+    chosenBudget.textContent = `Budget choisi :${budgetValue}`;
   });
 
   // Gestion des options de filtres
