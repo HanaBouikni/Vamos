@@ -109,3 +109,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const googleMapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}&label=${encodeURIComponent(label)}`;
         window.open(googleMapsUrl, '_blank');
     }
+    //............................................................Modal...............................................................
+    function openModal() {
+        document.getElementById('agencyModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('agencyModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+    
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('agencyModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
