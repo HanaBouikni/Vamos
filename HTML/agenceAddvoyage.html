@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Voyage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/agenceAddvoyage.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="../imageVamos/logo.png" alt="logo"  class="logo_picture">
+      </div>
+    <a href="#" class="back-button" onclick="history.back()">
+        <img src="../imageVamos/next 5.png" alt="back"class="back_picture">
+    </a>
+
+    <div class="container">
+        <h1>Ajouter un Nouveau Voyage</h1>
+        
+        <form id="travelForm">
+            <div class="form-group">
+                <label>Images du Voyage</label>
+                <div class="image-upload-container">
+                    <input type="file" id="images" accept="image/*" multiple required>
+                    <div id="imagesPreview"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="departureDate">Date de Départ</label>
+                <input type="date" id="departureDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="returnDate">Date de Retour</label>
+                <input type="date" id="returnDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hotel">Nom de l'Hôtel</label>
+                <input type="text" id="hotel" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Note de l'Hôtel (0-5)</label>
+                <input type="number" id="rating" min="0" max="5" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Package</label>
+                <div class="package-options">
+                    <div class="package-option" data-value="demi-pension"onclick="selectOption(this)">Demi-Pension</div>
+                    <div class="package-option" data-value="all-inclusive"onclick="selectOption(this)">All Inclusive</div>
+                    <div class="package-option" data-value="petit-dejeuner"onclick="selectOption(this)">Petit Déjeuner</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="priceAdult">Prix Adulte</label>
+                <input type="number" id="priceAdult" min="0" step="1000" placeholder="exemple: 23000DA" required>
+            </div>
+
+            <div class="form-group">
+                <label for="priceChild">Prix Enfant (-12 ans)</label>
+                <input type="number" id="priceChild" min="0" step="1000" placeholder="exemple: 23000DA" required>
+            </div>
+
+            <div class="form-group">
+                <label>Services supplémentaires</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="services" value="activites"> Activités</label>
+                    <label><input type="checkbox" name="services" value="billet-avion"> Billet d'avion</label>
+                    <label><input type="checkbox" name="services" value="visa"> Visa</label>
+                    <label><input type="checkbox" name="services" value="transport"> Transport</label>
+                </div>
+            </div>
+
+            <button type="submit">Ajouter le Voyage</button>
+        </form>
+    </div>
+<script src="../JS/agenceAddvoyage.js"></script>
+   
+</body>
+</html>
