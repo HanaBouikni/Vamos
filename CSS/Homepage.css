@@ -89,8 +89,9 @@
 
  
 .images{
-  margin-top: 0px;
+  margin-top: -20px;
   margin-right: 200px;
+  height: 900px;
   display:flex;
   animation-duration: 30s;
   animation-name: mesImages;
@@ -120,7 +121,7 @@
   margin-left: 0px;
   margin-right: 0px;
   height: fit-content;
-  margin-top: -500px;
+  margin-top: -100px;
 }
 
 .slide {
@@ -142,16 +143,28 @@
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  margin-left: -390px;
+  margin-top: 150px;
   color: rgb(255, 255, 255);
   padding: 10px 20px;
-  font-size: 50px;
+  font-size: 90px;
   border-radius: 5px;
   text-shadow: 1px 1px 3px rgba(77, 73, 73, 0.8);
   opacity: 0; /* Commence invisible */
-  font-family: 'Roboto', sans-serif; /* Utilise une police plus esthétique */
+  font-family: "Lobster", serif;
+  font-weight: 400 px;
+  font-style: normal; /* Utilise une police plus esthétique */
   animation: slideInText 1s ease-out forwards;
   animation-delay: 0.5s; /* Délai avant le début de l'animation */
 }
+
+
+.lobster-regular {
+  font-family: "Lobster", serif;
+  font-weight: 400px;
+  font-style: normal;
+}
+
 /* Animation pour réinitialiser et redémarrer l'animation du texte */
 @keyframes resetText {
   0% {
@@ -166,15 +179,19 @@
 
 /* Appliquer l'animation de reset au changement de slide */
 .slide .caption {
-  transform: translate(-70%, -567%);
+  transform: translate(-20%, -567%);
   top: 20px;
   left: 50px;
+  margin-top: 300px;
   color: rgb(255, 255, 255);
   padding: 10px 20px;
-  font-size: 50px;
+  font-size: 120px;
   border-radius: 5px;
   text-shadow: 1px 1px 3px rgba(77, 73, 73, 0.8);
   opacity: 0;
+  font-family: "Lobster", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 /* Définition de l'animation */
 @keyframes slideAndFade {
@@ -199,7 +216,7 @@
   position: relative;
 }
 
-.images .slide .caption {
+.images .slide .captions {
   animation: none; /* Annule toute animation précédente */
 }
 
