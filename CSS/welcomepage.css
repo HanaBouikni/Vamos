@@ -102,5 +102,30 @@ body{
         transform: translate(0, 0) rotate(360deg);
     }
 }
-  
+.next-button {
+    position: fixed;
+    margin-bottom: -450px;
+    margin-left: -450px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.next-button:hover {
+    transform: scale(1.1);
+}
+
+.next_picture{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Cercle parfait */
+    margin-right: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
   

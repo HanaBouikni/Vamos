@@ -61,12 +61,12 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
-    overflow-y:auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+   
   }
  .text{
   font-family:Arial, Helvetica, sans-serif;
@@ -75,15 +75,21 @@
   margin-right: 0%;
  }
   .containertotal {
+    position: relative;
     display: flex;
     width: 100%;
+    flex-direction: column; /* Assure que le contenu s'empile verticalement */
+    min-height: 100vh; /* Prend au minimum toute la hauteur de la fenêtre */
   }
-  .container {
+  .contentcontainer {
     padding-top: 80px; /* Pour laisser la place à la barre */
+    flex: 1; /* Permet au contenu de prendre l'espace disponible */
+   margin-left:-100px;
   }
+
  
 .images{
-  margin-top: 500px;
+  margin-top: 0px;
   margin-right: 200px;
   display:flex;
   animation-duration: 30s;
@@ -111,15 +117,16 @@
   width: 1620px;
   overflow: hidden;
   border-radius: 2px; 
-  margin-left: -90px;
-  margin-right: -500px;
+  margin-left: 0px;
+  margin-right: 0px;
   height: fit-content;
-  margin-top: 900px;
+  margin-top: -500px;
 }
 
 .slide {
   width: 1620px;
   flex-shrink: 0;
+  position: relative;
 }
 
 /* Images */
@@ -132,6 +139,33 @@
 
 /* Texte (caption) */
 .caption {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  font-size: 50px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px rgba(77, 73, 73, 0.8);
+  opacity: 0; /* Commence invisible */
+  font-family: 'Roboto', sans-serif; /* Utilise une police plus esthétique */
+  animation: slideInText 1s ease-out forwards;
+  animation-delay: 0.5s; /* Délai avant le début de l'animation */
+}
+/* Animation pour réinitialiser et redémarrer l'animation du texte */
+@keyframes resetText {
+  0% {
+      opacity: 0;
+      transform: translate(-100%, -567%);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-70%, -567%);
+  }
+}
+
+/* Appliquer l'animation de reset au changement de slide */
+.slide .caption {
   transform: translate(-70%, -567%);
   top: 20px;
   left: 50px;
@@ -140,7 +174,40 @@
   font-size: 50px;
   border-radius: 5px;
   text-shadow: 1px 1px 3px rgba(77, 73, 73, 0.8);
+  opacity: 0;
 }
+/* Définition de l'animation */
+@keyframes slideAndFade {
+  0% {
+      opacity: 0;
+      transform: translate(-100%, -567%);
+  }
+  20% {
+      opacity: 1;
+      transform: translate(-70%, -567%);
+  }
+  80% {
+      opacity: 1;
+      transform: translate(-70%, -567%);
+  }
+  100% {
+      opacity: 0;
+      transform: translate(-70%, -567%);
+  }
+}
+.images .slide {
+  position: relative;
+}
+
+.images .slide .caption {
+  animation: none; /* Annule toute animation précédente */
+}
+
+.images .slide:nth-child(2) .caption { animation: slideAndFade 6s ease-out 0s infinite; }
+.images .slide:nth-child(3) .caption { animation: slideAndFade 6s ease-out 6s infinite; }
+.images .slide:nth-child(4) .caption { animation: slideAndFade 6s ease-out 12s infinite; }
+.images .slide:nth-child(5) .caption { animation: slideAndFade 6s ease-out 18s infinite; }
+
 .search-bar {
   position:absolute;
   display: flex;
@@ -456,9 +523,8 @@
   width: 1300px;
   border-radius: 15px;
   height: 450px; 
-  margin: 0 auto;
   overflow: hidden;
-  margin-left: 100px;
+  margin-left: 200px;
 }
 
 .carousel-image {
@@ -484,4 +550,98 @@
   height: 400px; /* Fixed height for consistent card layout */
   object-fit: cover; /* Ensures the image fits nicely */
   border-bottom: 4px solid #007bff; /* Adds a decorative border */
+}
+/*...................................................... Footer............................................. */
+/* Styles du footer */
+.footer {
+  background-color: #23385C;
+  color: white;
+  padding: 60px 0 20px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.footer-section h3 {
+  color: #A9D2FB;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.footer-text{
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+  margin-left: 170px;
+  margin-top: -30px;
+  font-weight: 600;
+  color: #A9D2FB;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #A9D2FB;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 150px;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+      grid-template-columns: 1fr;
+  }
 }
