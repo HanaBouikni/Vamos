@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,29 +9,35 @@
 </head>
 <body>
     <div class="sidebar">
-        <div class="agence-name">Arrispectif voyage</div>
-        <div class="rating">
-            <img src="../imageVamos/star.png" alt="Star" class="star">
-            <span>4.5</span>
+        <div class="logo-section" >
+            <h1>{{ agences.nom }}</h1>
+            <div class="rating">
+                <span class="star">★</span>
+                <span>{{ agences.rating }}</span>
+            </div>
         </div>
-
-        <a href="#" class="nav-item active">
-            <img src="../imageVamos/avion.png" alt="trips" class="icon">
-            <a href = "#"  style="text-decoration: none; color:white;"> Trips </a>
-        </a>
-        <a href="#" class="nav-item">
-            <img src="../imageVamos/envoyer.png" alt="request" class="icon">
-            <a href = "#"  style="text-decoration: none; color:white;"> request </a>
-        </a>
-        <a href="#" class="nav-item">
-            <img src="../imageVamos/editer.png" alt="addvoyage" class="icon">
-            <a href = "#"  style="text-decoration: none; color:white;" > add trip </a>
-        </a>
-
-        <a href="#" class="nav-item logout">
-            <img src="../imageVamos/se-deconnecter.png" alt="logout" class="icon">
-            <a href = "#"  style="text-decoration: none; color:white;"> logout </a>
-        </a>
+    
+        <button class="nav-item">
+            <img src="{% static 'img/pages/imageVamos/plaine.png'%}" alt="Trips" class="nav-icon">
+            <span>Trips</span>
+        </button>
+        <button class="nav-item active">
+            <img src="{% static 'img/pages/imageVamos/msg.png'%}" alt="Requests" class="nav-icon">
+            <span>Requests</span>
+        </button>
+        <button class="nav-item">
+            <img src= "{% static 'img/pages/imageVamos/edit.png'%}" alt="Add Trip" class="nav-icon">
+            <a href="{% url 'add_voyage' %}" style="text-decoration: none; color:white;">Add trip</a>
+        </button>
+    
+        <div class="icon-circle">
+            <img src="{% static 'img/pages/imageVamos/logo.png'%}" alt="Icon Circle" class="icon-circle-img">
+        </div>
+    
+        <button class="nav-item logout">
+            <img src="{% static 'img/pages/imageVamos/logout.png'%}" alt="Logout" class="nav-icon">
+            <a href="{% url 'logout' %}" style="text-decoration: none; color:white;">Logout</a>
+        </button>
     </div>
 
     <div class="main-content">
@@ -51,9 +58,12 @@
                         <img src="../imageVamos/antalya.jpg" alt="Antalya" class="destination_img">
                         <div class="destination_text">
                             <div class="destination_header_group">
-                                <h3 class="destination_title">Antalya</h3>
-                                <span></span>
-                            </div>
+                                <h3 class="destination_title">Antalya </h3>
+                                <div class="date">May 5 --- 10</div>
+                                <div class="location">
+                                    <img src="../imageVamos/Group (1).png" alt="Group photo " class="group-photo">
+                                    <span> localisation tae lhotel </span>
+                                </div>
                             <div class="icon_group">
                                 <div class="building_rating">
                                     <img src="../imageVamos/resort.png" alt="hotel" class="hotel-icon">

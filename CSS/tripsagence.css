@@ -10,8 +10,9 @@ body {
     display: flex;
 }
 
-.sidebar {
-    width: 180px;
+  .sidebar {
+
+    width: 220px;
     background: linear-gradient(135deg, #23385C, #4A76C2);
     padding: 20px;
     min-height: 100vh;
@@ -24,66 +25,70 @@ body {
     z-index: 1000;
 }
 
-.agence-name {
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 10px;
-    white-space: nowrap;
+.logo-section {
+margin-bottom: 30px;
 }
 
 .rating {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 40px;
+display: flex;
+align-items: center;
+gap: 8px;
+margin-top: 10px;
 }
 
-.rating .star {
-    width: 20px;
-    height: 20px;
+.star {
+color: #fbbf24;
 }
 
 .nav-item {
-    width: 100%;
-    padding: 15px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
-    font-size: 12px;
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 12px;
+margin: 4px 0;
+border-radius: 6px;
+cursor: pointer;
+border: none;
+background: none;
+color: white;
+width: 100%;
+font-size: 16px;
+transition: background-color 0.2s;
 }
 
 .nav-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+background: rgba(255, 255, 255, 0.1);
 }
 
 .nav-item.active {
-    background-color: rgba(255, 255, 255, 0.15);
+background: rgba(255, 255, 255, 0.2);
 }
 
-.icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.nav-icon {
+width: 24px;
+height: 24px;
 }
 
+.icon-circle {
+display: flex;
+justify-content: center;
+margin-top: auto; /* This will push the icon-circle to the bottom */
+}
+
+.icon-circle-img {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+}
 
 .logout {
-    margin-top: auto;
-
+margin-top: 20px; /* Add some space between the icon-circle and the logout button */
 }
 
 .main-content {
-    margin-left: 180px;
-    flex-grow: 1;
-    padding: 30px;
+  flex: 1;
+  padding: 32px;
+  margin-left: 120px;
 }
 
 .header {
@@ -239,3 +244,18 @@ body {
     margin-bottom: 1rem;
   
   }
+  .date{
+    font-weight: bold;
+    color: #305daa;
+    margin-bottom: 0.5rem;
+  }
+  
+.location {
+  display: flex;
+  align-items: center;
+}
+.group-photo{
+  margin-right: 10px;
+  width: 5%;
+  height: 15px;
+}
