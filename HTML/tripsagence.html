@@ -57,32 +57,46 @@
         <h1 class="page-title">Trips</h1>
 
         <div class="voyages-grid">
+            {% for voyage in voyages %}
             <div class="voyage-card">
-                    <a href="#" class="destination_link">
-                        <img src="../imageVamos/antalya.jpg" alt="Antalya" class="destination_img">
+                    <a href="#" class="destination_link"onclick="getVoyageId(event)">
+                        
+                        <img src="{{ voyage.image1.url }}" alt= "Image 1 de {{ voyage.Destination }}" class="destination_img">
                         <div class="destination_text">
                             <div class="destination_header_group">
-                                <h3 class="destination_title">Antalya </h3>
-                                <div class="date">May 5 --- 10</div>
+                                <h3 class="destination_title">{{ voyage.Destination }}</h3>
+                                <div class="date">
+                                    <p><strong>Date de départ:</strong> {{ voyage.date_depart }}</p>
+                                    <p><strong>Date de retour:</strong> {{ voyage.date_retour }}</p>     
+                                </div>
                                 <div class="location">
                                     <img src="../imageVamos/Group (1).png" alt="Group photo " class="group-photo">
-                                    <span style=" color: #23385C;"> localisation tae lhotel </span>
+                                    <span style=" color: #23385C;">{ {voyage.location_hotel} }</span>
                                 </div>
                             <div class="icon_group">
                                 <div class="building_rating">
                                     <img src="../imageVamos/resort.png" alt="hotel" class="hotel-icon">
-                                    <span>4</span>
+                                    <span>{{ voyage.note_hotel }}/5</span>
                                 </div>
                                     <div class="options_icons">
-                                        <img src="../imageVamos/billets-davion.png" alt="ticket" class="ticket">
-                                        <img src="../imageVamos/bus.png" alt="transport" class="transport">
-                                        <img src="../imageVamos/Visa.png" alt="visa" class="visa">
-                                        <img src="../imageVamos/process.png" alt="Activities" class="activities">
+                                        {% if voyage.billet_avion %}
+                                        <img src="{% static 'img/pages/imageVamos/billets-davion.png' %}" alt="ticket" class="ticket">
+                                        {% endif %}
+                                        {% if voyage.Transport %}
+                                        <img src="{% static 'img/pages/imageVamos/bus.png' %}" alt="transport" class="transport">
+                                        {% endif %}
+                                        {% if voyage.Visa %}
+                                        <img src="{% static 'img/pages/imageVamos/Visa.png' %}" alt="visa" class="visa">
+                                        {% endif %}
+                                        {% if voyage.Activités %}
+                                        <img src="{% static 'img/pages/imageVamos/process.png' %}" alt="Activities" class="activities">
+                                        {% endif %}
                                     </div>
                                  </div>
                             </div>
                      </a>
             </div>
+            {% endfor %}
          </div>
     </div>
     <script src="../JS/tripsagence.js"></script>
